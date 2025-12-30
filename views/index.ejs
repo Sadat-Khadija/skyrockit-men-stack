@@ -1,23 +1,24 @@
+<!-- views/index.ejs -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
-</head>
-<body>
-  <% if (user) { %>
-    <h1>Welcome to the app, <%= user.username %>!</h1>
-    <p>
-      <a href="/auth/sign-out">Sign out</a>
-    </p>
-  <% } else { %>
-    <h1>Welcome to the app, guest.</h1>
-    <p>
-      <a href="/auth/sign-up">Sign up</a> or
-      <a href="/auth/sign-in">Sign in</a>.
-    </p>
-  <% } %>
-  <p><a href="/vip-lounge">Get into the VIP Users Only lounge!</a></p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Skyrockit</title>
+  </head>
+  <body class="index-body">
+    <%- include('./partials/_navbar.ejs') %>
+    <div class="index-container">
+      <div class="text-container">
+        <h1 class="main-header">Skyrockit</h1>
+        <p class="subheader">A job application tracker.</p>
+      </div>
+      <div class="auth-links">
+        <a class="signup-link" href="/auth/sign-up">Sign Up</a>
+        <a class="signin-link" href="/auth/sign-in">Sign In</a>
+      </div>
+    </div>
+  </body>
 </html>
